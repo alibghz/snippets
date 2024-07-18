@@ -1,0 +1,31 @@
+mode: ContinuousDeployment
+next-version: 3.0.0
+branches:
+  main:
+    mode: ContinuousDeployment
+    tag: ''
+    increment: Minor
+    prevent-increment-of-merged-branch-version: true
+    track-merge-target: false
+    tracks-release-branches: false
+    is-release-branch: false
+  release/v2:
+    mode: ContinuousDeployment
+    tag: v2
+    increment: Patch
+    prevent-increment-of-merged-branch-version: true
+    track-merge-target: false
+    tracks-release-branches: false
+    is-release-branch: true
+  release:
+    mode: ContinuousDeployment
+    tag: ''
+    increment: Patch
+    prevent-increment-of-merged-branch-version: true
+    track-merge-target: false
+    tracks-release-branches: true
+    is-release-branch: true
+  feature:
+    tag: 'useBranchName'
+  hotfix:
+    tag: 'useBranchName'
